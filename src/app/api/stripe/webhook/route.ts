@@ -58,10 +58,23 @@ export async function POST(request: NextRequest) {
 
         console.log(`[Stripe] Subscription deleted for customer: ${customerId}`);
 
-        // Downgrade the user back to Free
         await supabase
           .from("instagram_accounts")
           .update({ plan: "free", stripe_subscription_id: null })
+          .eq("stripe_customer_id", customerId);
+
+        break;
+      }
+
+      case "invoice.payment_failed": {
+        const invoice = event.data.object as Stripe.Invoice;
+        const customerId = invoice.customer as string;
+
+        console.log(`[Stripe] Payment failed for customer: ${customerId}`);
+
+        await supabase
+          .from("instagram_accounts")
+          .update({ plan: "free" })
           .eq("stripe_customer_id", customerId);
 
         break;
