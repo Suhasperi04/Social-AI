@@ -59,7 +59,7 @@ PROFILE DATA:
 - Followers: ${profile.followers_count}
 - Following: ${profile.follows_count}
 - Posts: ${profile.media_count}
-- Website: ${(profile as Record<string, unknown>).website || "Not set"}
+- Website: ${(profile as unknown as Record<string, unknown>).website || "Not set"}
 
 RESPOND IN THIS EXACT JSON FORMAT:
 {

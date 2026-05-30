@@ -106,7 +106,7 @@ src/
 - Meta App Review is required for production (Live mode)
 - Instagram API rate limit: 200 calls/user/hour
 - Reports are cached for 24 hours to minimize API calls
-- Free plan: 5 reports, 3 competitor analyses, 20 content ideas
+- Free plan: 3 reports, 3 competitor analyses, 10 content ideas
 - Pro plan: Unlimited everything at ₹199/month
 
 ## License

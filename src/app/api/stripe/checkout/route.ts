@@ -4,17 +4,9 @@ import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function POST(request: NextRequest) {
   try {
-    const sessionCookie = request.cookies.get("sp_session")?.value;
-    if (!sessionCookie) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Decode the session cookie to get the instagram_id
-    const decoded = JSON.parse(Buffer.from(sessionCookie, "base64").toString("utf-8"));
-    const instagramId = decoded.ig_user_id;
-
+    const instagramId = request.cookies.get("sp_session")?.value;
     if (!instagramId) {
-      return NextResponse.json({ error: "Invalid session" }, { status: 400 });
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const supabase = createAdminClient();

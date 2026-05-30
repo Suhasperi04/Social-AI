@@ -14,7 +14,7 @@ export default function GrowthBlockersPage() {
   const [loading, setLoading] = useState(false);
   const { growthBlockers, setGrowthBlockers } = useDashboardStore();
 
-  const { toast } = useToast();
+  const toast = useToast();
 
   async function generateReport(force = false) {
     setLoading(true);

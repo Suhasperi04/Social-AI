@@ -12,7 +12,7 @@ const stagger = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { s
 export default function WinningContentPage() {
   const [loading, setLoading] = useState(false);
   const { winningContent, setWinningContent } = useDashboardStore();
-  const { toast } = useToast();
+  const toast = useToast();
 
   async function generateReport(force = false) {
     setLoading(true);

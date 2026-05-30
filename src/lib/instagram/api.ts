@@ -5,10 +5,10 @@ import {
   IGInsightsResponse,
 } from "./types";
 
-const GRAPH_API_BASE = "https://graph.facebook.com/v19.0";
+const GRAPH_API_BASE = "https://graph.instagram.com/v22.0";
 
 // ============================================
-// Instagram Graph API Wrapper (Facebook Login)
+// Instagram Graph API Wrapper (Instagram Business Login)
 // ============================================
 
 export class InstagramAPI {

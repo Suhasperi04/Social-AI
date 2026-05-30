@@ -49,7 +49,7 @@ function CircularScore({ score, label, size = 120 }: { score: number; label: str
 export default function AccountHealthPage() {
   const [loading, setLoading] = useState(false);
   const { accountHealth, setAccountHealth } = useDashboardStore();
-  const { toast } = useToast();
+  const toast = useToast();
 
   async function generateReport(force = false) {
     setLoading(true);

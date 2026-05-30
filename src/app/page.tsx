@@ -394,9 +394,9 @@ function PricingSection() {
             <ul className="space-y-3 mb-8">
               {[
                 "1 Instagram Account",
-                "5 Full AI Reports",
+                "3 Full AI Reports",
                 "3 Competitor Analyses",
-                "20 Content Idea Requests",
+                "10 Content Idea Requests",
                 "Account Health Score",
                 "Profile Analysis",
               ].map((feature) => (
@@ -573,7 +573,7 @@ const faqs = [
   },
   {
     q: "Can I analyze my competitors?",
-    a: "Yes! You can analyze up to 3 competitors on the free plan and unlimited competitors on Pro. The competitor must also have a Business or Creator account.",
+    a: "Yes! You can analyze up to 3 competitors on the free plan and unlimited on Pro. The competitor must also have a Business or Creator account.",
   },
 ];
 

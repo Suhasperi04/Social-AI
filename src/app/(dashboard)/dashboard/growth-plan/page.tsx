@@ -13,7 +13,7 @@ export default function GrowthPlanPage() {
   const [loading, setLoading] = useState(false);
   const [expandedWeek, setExpandedWeek] = useState<number | null>(0);
   const { growthPlan, setGrowthPlan } = useDashboardStore();
-  const { toast } = useToast();
+  const toast = useToast();
 
   async function generateReport(force = false) {
     setLoading(true);

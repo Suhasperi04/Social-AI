@@ -106,7 +106,7 @@ const quickActions = [
 export default function DashboardHome() {
   const { account, usage, isLoading } = useAuthStore();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const { toast } = useToast();
+  const toast = useToast();
 
   async function handleUpgrade() {
     setCheckoutLoading(true);

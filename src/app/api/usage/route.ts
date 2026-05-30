@@ -9,17 +9,18 @@ export async function GET(request: NextRequest) {
     const supabase = createAdminClient();
 
     const [accountResult, usageResult] = await Promise.all([
-      supabase.from("instagram_accounts").select("*").eq("instagram_id", instagramId).single(),
+      supabase
+        .from("instagram_accounts")
+        .select("id,instagram_id,username,full_name,profile_picture_url,biography,followers_count,following_count,media_count,account_type,plan,trial_used,created_at,last_login,updated_at,stripe_customer_id,stripe_subscription_id")
+        .eq("instagram_id", instagramId)
+        .single(),
       supabase.from("usage").select("*").eq("instagram_id", instagramId).single(),
     ]);
 
     if (!accountResult.data) return NextResponse.json({ error: "Account not found" }, { status: 404 });
 
     return NextResponse.json({
-      account: {
-        ...accountResult.data,
-        access_token: undefined, // Never send token to client
-      },
+      account: accountResult.data,
       usage: usageResult.data,
     });
   } catch (error) {
