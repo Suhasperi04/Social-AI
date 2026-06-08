@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   const authUrl = new URL("https://www.instagram.com/oauth/authorize");
   authUrl.searchParams.set("client_id", appId);
   authUrl.searchParams.set("redirect_uri", redirectUri);
-  authUrl.searchParams.set("scope", "instagram_basic,instagram_manage_insights");
+  authUrl.searchParams.set("scope", "instagram_business_basic");
   authUrl.searchParams.set("response_type", "code");
   authUrl.searchParams.set("state", state);
 
